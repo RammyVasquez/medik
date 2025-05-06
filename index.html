@@ -3,190 +3,555 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adimedik - Soluciones Médicas</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Encabezado */
-        header {
-            background-color: #004aad;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header .logo img {
-            height: 50px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Banner */
-        .banner {
-            background-image: url('https://via.placeholder.com/1200x400'); /* Reemplaza con tu imagen */
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-
-        .banner h1 {
-            font-size: 36px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .banner p {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #ff6f00;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .btn:hover {
-            background-color: #e65c00;
-        }
-
-        /* Sección de Servicios */
-        .services {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .services h2 {
-            font-size: 28px;
-            margin-bottom: 30px;
-            color: #004aad;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #004aad;
-        }
-
-        .service-card p {
-            font-size: 16px;
-            color: #333;
-        }
-
-        /* Pie de página */
-        footer {
-            background-color: #004aad;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        footer a {
-            color: #ff6f00;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Adimedik - Medicamentos y Más</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Preload critical images -->
+    <link rel="preload" href="images/logo-adimedik.png" as="image" type="image/png">
+    <link rel="preload" href="images/slide-1.jpg" as="image" type="image/webp">
+    <link rel="preload" href="images/slide-2.jpg" as="image" type="image/webp">
+    <!-- Librerías de la carpeta vendor -->
+    <link rel="stylesheet" href="vendor/flickity.min.css">
+    <link rel="stylesheet" href="vendor/magnific-popup.css">
+    <link rel="stylesheet" href="vendor/aos.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Fuente Lato para coincidir con la página original -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Encabezado -->
-    <header>
-        <div class="logo">
-            <img src="https://via.placeholder.com/150x50" alt="Adimedik Logo"> <!-- Reemplaza con tu logo -->
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-wrapper">
+            <div id="top-bar" class="header-top">
+                <div class="container">
+                    <strong class="uppercase">Adimedik medicamentos y más...</strong>
+                </div>
+            </div>
+            <div id="masthead" class="header-main">
+                <div class="header-inner container">
+                    <div id="logo" class="logo">
+                        <a href="/" title="Adimedik">
+                            <picture>
+                                <img src="images/logo-adimedik.png" alt="Adimedik Logo">
+                            </picture>
+                        </a>
+                    </div>
+                    <nav class="header-nav">
+                        <ul class="nav nav-uppercase">
+                            <li><a href="#inicio" class="nav-top-link">Inicio</a></li>
+                            <li><a href="#nosotros" class="nav-top-link">Nosotros</a></li>
+                            <li><a href="#servicios" class="nav-top-link">Servicios</a></li>
+                            <li><a href="#contacto" class="nav-top-link">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <!-- Banner -->
-    <section class="banner">
-        <div>
-            <h1>Soluciones Médicas Integrales</h1>
-            <p>Ofrecemos servicios de alta calidad para tu bienestar</p>
-            <a href="#contacto" class="btn">Contáctanos</a>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Slider -->
+        <section id="inicio" class="slider-wrapper">
+            <div class="slider" data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true, "autoPlay": 6000, "pauseAutoPlayOnHover": true, "fade": true, "imagesLoaded": true }'>
+                <div class="banner">
+                    <div class="banner-inner">
+                        <div class="banner-bg">
+                            <picture>
+                                <img src="images/slide-2.jpg" alt="Doctor with Stethoscope">
+                            </picture>
+                        </div>
+                        <div class="overlay"></div>
+                        <div class="banner-layers container">
+                            <div class="text-box">
+                                <p class="uppercase"><span>Medicamentos y más!</span></p>
+                                <h3 class="uppercase"><strong><span>BIENVENIDOS</span></strong></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div class="banner-inner">
+                        <div class="banner-bg">
+                            <picture>
+                                <img src="images/slide-1.jpg" alt="Medical Supplies">
+                            </picture>
+                        </div>
+                        <div class="overlay"></div>
+                        <div class="banner-layers container">
+                            <div class="text-box">
+                                <p class="uppercase"><span>Soluciones Integrales</span></p>
+                                <h3 class="uppercase"><strong><span>PARA TU NEGOCIO</span></strong></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Sección de Servicios -->
-    <section class="services" id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Consultas Médicas</h3>
-                <p>Atención personalizada con especialistas en diversas áreas.</p>
+        <!-- Banner Section (Before Nosotros) -->
+        <section class="section" id="banner-section">
+            <div class="row row-collapse row-full-width" id="banner-row">
+                <div id="col-1793849446" class="col medium-3 small-12 large-3">
+                    <div class="col-inner">
+                        <div class="banner has-hover" id="banner-88061359">
+                            <div class="banner-inner fill">
+                                <div class="banner-bg fill" style="background-color: rgba(52, 166, 212, 0.67);">
+                                    <div class="overlay" style="background-color: rgba(0, 0, 0, 0.12);"></div>
+                                </div>
+                                <div class="banner-layers container">
+                                    <div class="fill banner-link"></div>
+                                    <div id="text-box-583751819" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                        <div class="text-box-content text dark">
+                                            <div class="text-inner text-center">
+                                                <h2 class="uppercase"><strong>MEDICAMENTOS</strong></h2>
+                                                <h4>Más de 6000 productos de medicamentos genéricos y de patente a su disposición.</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="col-1944731517" class="col medium-3 small-12 large-3">
+                    <div class="col-inner">
+                        <div class="banner has-hover" id="banner-1064399829">
+                            <div class="banner-inner fill">
+                                <div class="banner-bg fill" style="background-color: rgba(152, 199, 38, 0.54);">
+                                    <div class="overlay" style="background-color: rgba(0, 0, 0, 0.12);"></div>
+                                </div>
+                                <div class="banner-layers container">
+                                    <div class="fill banner-link"></div>
+                                    <div id="text-box-759851170" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                        <div class="text-box-content text dark">
+                                            <div class="text-inner text-center">
+                                                <h2 class="uppercase"><strong>MATERIAL DE CURACIÓN</strong></h2>
+                                                <h4>Más de 300 marcas<br>a su elección.</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="col-694172211" class="col medium-3 small-12 large-3">
+                    <div class="col-inner">
+                        <div class="banner has-hover" id="banner-1963022259">
+                            <div class="banner-inner fill">
+                                <div class="banner-bg fill" style="background-color: rgba(91, 91, 91, 0.48);">
+                                    <div class="overlay" style="background-color: rgba(0, 0, 0, 0.12);"></div>
+                                </div>
+                                <div class="banner-layers container">
+                                    <div class="fill banner-link"></div>
+                                    <div id="text-box-470071563" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                        <div class="text-box-content text dark">
+                                            <div class="text-inner text-center">
+                                                <h2 class="uppercase"><strong>ORTOPEDIA Y MÁS</strong></h2>
+                                                <h4>Materiales y asesoría especializada.</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="col-1337602421" class="col medium-3 small-12 large-3">
+                    <div class="col-inner">
+                        <div class="banner has-hover" id="banner-2064148410">
+                            <div class="banner-inner fill">
+                                <div class="banner-bg fill" style="background-color: rgba(52, 166, 212, 0.843);">
+                                    <div class="overlay" style="background-color: rgba(0, 0, 0, 0.12);"></div>
+                                </div>
+                                <div class="banner-layers container">
+                                    <div class="fill banner-link"></div>
+                                    <div id="text-box-765996880" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                        <div class="text-box-content text dark">
+                                            <div class="text-inner text-center">
+                                                <h2 class="uppercase"><strong>LOGÍSTICA OPERATIVA</strong></h2>
+                                                <h4>Planeación estratégica y eficiencia que busque la rentabilidad de sus clientes.</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>Equipos Médicos</h3>
-                <p>Distribución de tecnología médica de última generación.</p>
+        </section>
+
+        <!-- Nosotros -->
+        <section class="section" id="nosotros" data-aos="fade-up">
+            <div class="bg section-bg fill bg-fill" style="background-color: rgb(91, 91, 91);"></div>
+            <div class="section-content relative">
+                <div class="row row-collapse row-full-width align-middle align-center" id="row-777609994">
+                    <div id="col-432519989" class="col medium-12 small-12 large-6 medium-col-first">
+                        <div class="col-inner">
+                            <div class="banner has-hover" id="banner-1461924315">
+                                <div class="banner-inner fill">
+                                    <div class="banner-bg fill">
+                                        <picture>
+                                            <img src="images/nosotros.jpg" alt="Hospital Room" style="object-fit: cover; width: 100%; height: 100%;">
+                                        </picture>
+                                    </div>
+                                    <div class="banner-layers container">
+                                        <div class="fill banner-link"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="col-2035556324" class="col index-up medium-12 small-11 large-6">
+                        <div class="col-inner">
+                            <div class="gap-element clearfix" style="padding-top: 30px;"></div>
+                            <div class="row align-center" id="row-1364378256">
+                                <div id="col-1657340418" class="col index-up medium-11 small-12 large-12">
+                                    <div class="col-inner text-center" style="background-color: rgb(255, 255, 255);">
+                                        <h1>Nosotros</h1>
+                                        <p>Somos una empresa fundada en 2022 como parte de la creciente demanda de servicio en la comercialización de insumos para la salud, logrando tener una base sólida de logística y operación en la atención de nuestros clientes y proveedores. Una empresa familiar que busca crear su propio negocio de emprendimiento formando líderes estratégicos que consoliden una correcta distribución en la cadena de insumos para la salud buscando siempre la mejora continua y generación de empleos especializados donde nuestro personal exceda los límites de calidad que esperan nuestros clientes y proveedores.</p>
+                                        <div class="stack stack-row justify-center items-stretch sm:stack-col">
+                                            <a href="#light1" target="_self" class="button primary lightbox" style="border-radius: 99px;">
+                                                <span>Descargar Productos</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>Servicios de Diagnóstico</h3>
-                <p>Exámenes precisos para un diagnóstico confiable.</p>
+        </section>
+        <!-- Misión, Visión, Valores -->
+        <section class="section info-card-1" id="section_245975371" data-aos="fade-up">
+            <div class="bg section-bg fill bg-fill" style="background-color: rgba(91, 91, 91, 0.116);"></div>
+            <div class="section-content relative">
+                <div class="row row-small align-equal" id="row-1798343967">
+                    <!-- Misión -->
+                    <div id="col-508974846" class="col medium-4 small-12 large-4">
+                        <div class="col-inner">
+                            <div class="box has-hover box-push box-text-bottom">
+                                <div class="box-image" style="width: 80%; margin: 0 auto;">
+                                    <a href="#">
+                                        <picture>
+                                            <img loading="lazy" decoding="async" src="images/Mision-1.png" alt="Misión Icon" width="400" height="400">
+                                        </picture>
+                                    </a>
+                                </div>
+                                <div class="box-text text-center" style="background-color: rgba(255, 255, 255, 0.82); padding: 20px 5%;">
+                                    <div class="box-text-inner">
+                                        <h4>Misión</h4>
+                                        <p>Ser un aliado estratégico en el abastecimiento de medicamentos y material de curación.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Visión -->
+                    <div id="col-1450033912" class="col medium-4 small-12 large-4">
+                        <div class="col-inner">
+                            <div class="box has-hover box-push box-text-bottom">
+                                <div class="box-image" style="width: 80%; margin: 0 auto;">
+                                    <a href="#">
+                                        <picture>
+                                            <img loading="lazy" decoding="async" src="images/Vision-1.png" alt="Visión Icon" width="400" height="400">
+                                        </picture>
+                                    </a>
+                                </div>
+                                <div class="box-text text-center" style="background-color: rgba(255, 255, 255, 0.82); padding: 20px 5%;">
+                                    <div class="box-text-inner">
+                                        <h4>Visión</h4>
+                                        <p>Ser reconocidos como el proveedor que prioriza al cliente con amplia cobertura y selección de productos adecuados a sus necesidades.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Valores -->
+                    <div id="col-939578656" class="col medium-4 small-12 large-4">
+                        <div class="col-inner">
+                            <div class="box has-hover box-push box-text-bottom">
+                                <div class="box-image" style="width: 80%; margin: 0 auto;">
+                                    <a href="#">
+                                        <picture>
+                                            <img loading="lazy" decoding="async" src="images/Valores-1.png" alt="Valores Icon" width="400" height="400">
+                                        </picture>
+                                    </a>
+                                </div>
+                                <div class="box-text text-center" style="background-color: rgba(255, 255, 255, 0.82); padding: 20px 5%;">
+                                    <div class="box-text-inner">
+                                        <h4>Valores</h4>
+                                        <p>Pasión por el servicio<br>Eficiencia Operacional<br>Enfoque en nuestros clientes<br>Variedad de ofertas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" class="section" data-aos="fade-up">
+            <div class="container ">
+                <h3 class=" section-title uppercase">Nuestros Servicios</h3>
+                <p>Nuestro objetivo es lograr que tus clientes tengan todo lo que necesitan en el momento que lo necesitan, haciendo sinergia contigo, planificando estrategias y logrando tus objetivos.</p>
+                <!-- Slider de Servicios -->
+                <div class="services-slider" data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true, "autoPlay": 4000, "imagesLoaded": true }'>
+                    <div class="banner">
+                        <div class="banner-inner">
+                            <div class="banner-bg">
+                                <picture>
+                                    <img src="images/slide-3.jpg" alt="Healthcare Professionals">
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <div class="banner-inner">
+                            <div class="banner-bg">
+                                <picture>
+                                    <img src="images/slide-1.jpg" alt="Medical Equipment">
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cuadrícula de Servicios -->
+                <div class="row row-small align-equal row-box-shadow-3-hover" id="services-row">
+                    <div class="col medium-6 small-12 large-6">
+                        <div class="col-inner" style="background-color: rgba(52, 166, 212, 0.831);">
+                            <a class="plain" href="#">
+                                <div class="icon-box featured-box icon-box-center text-center">
+                                    <div class="icon-box-img" style="width: 100px;">
+                                        <div class="icon">
+                                            <div class="icon-inner">
+                                                <picture>
+                                                    <img loading="lazy" decoding="async" src="images/medicamentos.png" alt="Medicamentos">
+                                                </picture>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box-text last-reset">
+                                        <div class="text">
+                                            <h2>Medicamentos</h2>
+                                        </div>
+                                        <div class="gap-element" style="padding-top: 10px;"></div>
+                                        <div class="text">
+                                            <p>Más de 6000 productos de medicamentos genéricos y de patente a su disposición.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col medium-6 small-12 large-6">
+                        <div class="col-inner" style="background-color: rgba(152, 199, 38, 0.843);">
+                            <a class="plain" href="#">
+                                <div class="icon-box featured-box icon-box-center text-center">
+                                    <div class="icon-box-img" style="width: 100px;">
+                                        <div class="icon">
+                                            <div class="icon-inner">
+                                                <picture>
+                                                    <img loading="lazy" decoding="async" src="images/material.png" alt="Material de Curación">
+                                                </picture>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box-text last-reset">
+                                        <div class="text">
+                                            <h2>Material de Curación</h2>
+                                        </div>
+                                        <div class="gap-element" style="padding-top: 10px;"></div>
+                                        <div class="text">
+                                            <p>Más de 300 marcas a su elección, nuestros socios comerciales cuentan con líneas de producción exclusivas para sus proyectos.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col medium-6 small-12 large-6">
+                        <div class="col-inner" style="background-color: rgba(91, 91, 91, 0.791);">
+                            <a class="plain" href="#">
+                                <div class="icon-box featured-box icon-box-center text-center">
+                                    <div class="icon-box-img" style="width: 100px;">
+                                        <div class="icon">
+                                            <div class="icon-inner">
+                                                <picture>
+                                                    <img loading="lazy" decoding="async" src="images/ortopedia.png" alt="Ortopedia">
+                                                </picture>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box-text last-reset">
+                                        <div class="text">
+                                            <h2>Ortopedia y Más</h2>
+                                        </div>
+                                        <div class="gap-element" style="padding-top: 10px;"></div>
+                                        <div class="text">
+                                            <p>Materiales y asesoría especializada para médicos, seguros, hospitales y pacientes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col medium-6 small-12 large-6">
+                        <div class="col-inner" style="background-color: rgba(52, 166, 212, 0.831);">
+                            <a class="plain" href="#">
+                                <div class="icon-box featured-box icon-box-center text-center">
+                                    <div class="icon-box-img" style="width: 100px;">
+                                        <div class="icon">
+                                            <div class="icon-inner">
+                                                <picture>
+                                                    <img loading="lazy" decoding="async" src="images/logistica.png" alt="Logística">
+                                                </picture>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box-text last-reset">
+                                        <div class="text">
+                                            <h2>Logística Operativa</h2>
+                                        </div>
+                                        <div class="gap-element" style="padding-top: 10px;"></div>
+                                        <div class="text">
+                                            <p>Soluciones innovadoras de acuerdo a sus proyectos y necesidades, no importa el tamaño de su operación, entregas urgentes en las diferentes rutas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="section" data-aos="fade-up">
+            <div class="banner">
+                <div class="banner-inner">
+                    <div class="bg section-bg fill bg-fill bg-loaded banner-bg">
+                        <picture>
+                            <img src="images/contacto.png" alt="Doctor and Patient">
+                        </picture>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="banner-layers container">
+                        <h2 class="section-title uppercase">Contáctanos</h2>
+                        <form id="contact-form" action="/submit" method="post">
+                            <div class="form-field">
+                                <label for="your-name">Nombre Completo</label>
+                                <input type="text" id="your-name" name="your-name" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="your-email">Correo electrónico</label>
+                                <input type="email" id="your-email" name="your-email" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="your-number">Teléfono</label>
+                                <input type="tel" id="your-number" name="your-number" maxlength="10" pattern="[0-9]{10}" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="your-message">Mensaje</label>
+                                <textarea id="your-message" name="your-message"></textarea>
+                            </div>
+                            <button type="submit" class="button primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Form (Lightbox) -->
+        <div id="light1" class="lightbox-content mfp-hide lightbox-white" style="max-width: 650px; padding: 20px;">
+            <section class="section" id="section_1938423977">
+                <div class="section-content relative">
+                    <div class="row row-collapse row-full-width align-bottom align-center" id="row-1677267244">
+                        <div id="col-789922013" class="col medium-8 small-12 large-8">
+                            <div class="col-inner text-center">
+                                <div class="img has-hover" id="image_1954303370">
+                                    <div class="img-inner dark">
+                                        <picture>
+                                            <img loading="lazy" decoding="async" src="images/logo-adimedik.png" alt="Adimedik Logo">
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="col-2129932398" class="col medium-9 small-11 large-9">
+                            <div class="col-inner text-left">
+                                <div id="text-1641319934" class="text">
+                                    <p class="h4 sub-text" style="text-align: center; color: rgb(0,0,0);">Deja tus datos para descargar el brochure.</p>
+                                </div>
+                                <div class="gap-element clearfix" style="padding-top: 20px;"></div>
+                                <form id="download-form-submit" action="/download" method="post">
+                                    <p>
+                                        <label>Nombre Completo</label><br>
+                                        <input type="text" name="your-name" required placeholder="Ingresar nombre completo">
+                                    </p>
+                                    <p>
+                                        <label>Correo electrónico</label><br>
+                                        <input type="email" name="your-email" required placeholder="Ingresar correo electrónico">
+                                    </p>
+                                    <p>
+                                        <label>Teléfono</label><br>
+                                        <input type="tel" name="your-number" maxlength="10" minlength="10" required placeholder="Ingresar número de teléfono">
+                                    </p>
+                                    <p>
+                                        <label>Mensaje</label><br>
+                                        <textarea name="your-message"></textarea>
+                                    </p>
+                                    <p>
+                                        <button type="submit" class="button primary">Enviar</button>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="section" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col medium-4 small-12 large-4">
+                    <picture>
+                        <img src="images/logo-adimedik-footer.png" alt="Adimedik Footer Logo">
+                    </picture>
+                </div>
+                <div class="col medium-4 small-12 large-4">
+                    <p>Av. Eugenio Garza Sada #2252, Col. Roma, C.P. 64700, Monterrey, N.L.<br>
+                    ventas@adimedik.com<br>(81) 15875899<br>
+                    <a href="/aviso-de-privacidad">Aviso de Privacidad</a></p>
+                </div>
+                <div class="col medium-4 small-12 large-4">
+                    <p>© 2025 by ADIMEDIK</p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Pie de página -->
-    <footer>
-        <p>Adimedik - Soluciones Médicas © 2025</p>
-        <p><a href="#contacto">Contáctanos</a> | <a href="#privacidad">Política de Privacidad</a></p>
     </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="joinchat joinchat--right">
+        <a href="https://wa.me/526623465710" class="joinchat__button" target="_blank">
+            <picture>
+                <img loading="lazy" decoding="async" src="images/WhatsApp-icon.png" alt="WhatsApp">
+            </picture>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/flickity.pkgd.min.js"></script>
+    <script src="vendor/magnific-popup.min.js"></script>
+    <script src="vendor/aos.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
